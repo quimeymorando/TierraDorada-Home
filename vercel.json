@@ -6,11 +6,11 @@
         },
         {
             "source": "/nodriza",
-            "destination": "https://nodriza-nu.vercel.app/nodriza/"
+            "destination": "https://nodriza-nu.vercel.app/"
         },
         {
             "source": "/nodriza/:path*",
-            "destination": "https://nodriza-nu.vercel.app/nodriza/:path*"
+            "destination": "https://nodriza-nu.vercel.app/:path*"
         },
         {
             "source": "/asume-tu-abundancia",
