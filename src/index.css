@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores mandatorios Nodriza */
+  --color-primary-navy: #001A33;
+  --color-primary-gold: #A67C00;
+  --color-primary-gold-light: #FFD700;
+
+  /* Fondos de sección */
+  --color-section-white: #FFFFFF;
+  --color-section-creme: #FDFCFB;
+  --color-section-navy: #001A33;
+
+  /* Tipografía */
+  --font-cinzel: "Cinzel", serif;
+  --font-montserrat: "Montserrat", sans-serif;
+
+  /* Gradientes */
+  --background-image-celeste-hermoso: radial-gradient(circle at 20% 30%, rgba(0, 58, 107, 1) 0%, rgba(0, 45, 82, 1) 100%);
+  --background-image-gold-metallic: linear-gradient(135deg, #A67C00 0%, #C49B26 45%, #FFD700 50%, #C49B26 55%, #A67C00 100%);
+}
+
+@layer base {
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #001A33 !important;
+    /* Forzar fondo Navy para evitar el blanco cegador */
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Cinzel", serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: var(--background-image-gold-metallic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(166, 124, 0, 0.2);
+  }
+
+  .button-gold-metallic {
+    background: var(--background-image-gold-metallic);
+    color: white;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+  }
+
+  .button-gold-metallic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(166, 124, 0, 0.3);
+  }
+
+  /* Star animations */
+  @keyframes star-pulse {
+
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes shooting-star {
+    0% {
+      transform: translateX(0) translateY(0) rotate(-45deg) scale(0);
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+      scale: 1;
+    }
+
+    100% {
+      transform: translateX(-1000px) translateY(1000px) rotate(-45deg) scale(1);
+      opacity: 0;
+    }
+  }
+
+  .animate-star {
+    animation: star-pulse 3s infinite ease-in-out;
+  }
+
+  .shooting-star {
+    position: absolute;
+    background: white;
+    height: 2px;
+    width: 100px;
+    opacity: 0;
+    background: linear-gradient(90deg, white, transparent);
+    animation: shooting-star 4s linear infinite;
+  }
+}

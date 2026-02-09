@@ -1,0 +1,72 @@
+{
+    "rewrites": [
+        {
+            "source": "/nodriza-preparacion",
+            "destination": "https://nodriza-webapp.vercel.app/nodriza/?view=confirmation"
+        },
+        {
+            "source": "/nodriza",
+            "destination": "https://nodriza-nu.vercel.app/nodriza/"
+        },
+        {
+            "source": "/nodriza/:path*",
+            "destination": "https://nodriza-nu.vercel.app/nodriza/:path*"
+        },
+        {
+            "source": "/asume-tu-abundancia",
+            "destination": "https://masterclass-abundancia.vercel.app/abundancia-masterclass"
+        },
+        {
+            "source": "/asume-tu-abundancia-landing/:path*",
+            "destination": "https://masterclass-abundancia.vercel.app/abundancia-masterclass/:path*"
+        },
+        {
+            "source": "/abundancia-masterclass",
+            "destination": "https://masterclass-abundancia.vercel.app/abundancia-masterclass"
+        },
+        {
+            "source": "/abundancia-masterclass/:path*",
+            "destination": "https://masterclass-abundancia.vercel.app/abundancia-masterclass/:path*"
+        },
+        {
+            "source": "/taller-lo-hago-real",
+            "destination": "https://taller-lo-hago-real.vercel.app/"
+        },
+        {
+            "source": "/taller-lo-hago-real/:path*",
+            "destination": "https://taller-lo-hago-real.vercel.app/:path*"
+        },
+        {
+            "source": "/mejora-tus-vinculos",
+            "destination": "https://mejora-vinculos.vercel.app/"
+        },
+        {
+            "source": "/mejora-tus-vinculos/:path*",
+            "destination": "https://mejora-vinculos.vercel.app/:path*"
+        },
+        {
+            "source": "/joaquinalterman",
+            "destination": "https://joaquin-alterman.vercel.app/"
+        },
+        {
+            "source": "/joaquinalterman/:path*",
+            "destination": "https://joaquin-alterman.vercel.app/:path*"
+        },
+        {
+            "source": "/taller-ingenieria-de-proposito",
+            "destination": "https://taller-ingenieria-de-proposito.vercel.app/"
+        },
+        {
+            "source": "/taller-ingenieria-de-proposito/:path*",
+            "destination": "https://taller-ingenieria-de-proposito.vercel.app/:path*"
+        },
+        {
+            "source": "/despliega-tu-proposito",
+            "destination": "https://despliega-tu-proposito.vercel.app/despliega-tu-proposito"
+        },
+        {
+            "source": "/despliega-tu-proposito/:path*",
+            "destination": "https://despliega-tu-proposito.vercel.app/despliega-tu-proposito/:path*"
+        }
+    ]
+}
