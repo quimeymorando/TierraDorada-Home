@@ -1,16 +1,20 @@
 {
+    "redirects": [
+        {
+            "source": "/nodriza",
+            "destination": "https://nodriza-nu.vercel.app/",
+            "permanent": false
+        },
+        {
+            "source": "/nodriza/:path*",
+            "destination": "https://nodriza-nu.vercel.app/:path*",
+            "permanent": false
+        }
+    ],
     "rewrites": [
         {
             "source": "/nodriza-preparacion",
             "destination": "https://nodriza-webapp.vercel.app/nodriza/?view=confirmation"
-        },
-        {
-            "source": "/nodriza",
-            "destination": "https://nodriza-nu.vercel.app/"
-        },
-        {
-            "source": "/nodriza/:path*",
-            "destination": "https://nodriza-nu.vercel.app/:path*"
         },
         {
             "source": "/asume-tu-abundancia",
