@@ -1,7 +1,7 @@
 
 import { SpaceBackground } from '../components/SpaceBackground'
 import { motion, type Variants } from 'framer-motion'
-import { Check, Lock, ExternalLink, Calendar, MessageCircle, Heart, Zap, Play } from 'lucide-react'
+import { Check, Lock, ExternalLink, Calendar, MessageCircle, Heart, Zap } from 'lucide-react'
 
 export default function NodrizaPreparacion() {
   const containerVariants: Variants = {
@@ -82,23 +82,13 @@ export default function NodrizaPreparacion() {
           </div>
 
           <div className="max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-black/40 relative group">
-            {/* Placeholder for Video Embed */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/60 group-hover:bg-black/40 transition-colors">
-              <div className="flex flex-col items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-primary-gold/90 flex items-center justify-center pl-1 group-hover:scale-110 transition-transform duration-300 cursor-pointer">
-                  <Play className="w-8 h-8 text-primary-navy fill-current" />
-                </div>
-                <span className="font-cinzel text-sm tracking-widest text-primary-gold-light">Reproducir Video</span>
-              </div>
-            </div>
-            {/* Replace this div with actual iframe when video ID is known */}
-            {/* <iframe 
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                  title="Briefing Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen 
-                ></iframe> */}
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/JzkVfsIDeGE"
+              title="Briefing de Apertura"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </motion.section>
 
