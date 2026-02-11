@@ -1,6 +1,6 @@
 
 import { SpaceBackground } from '../components/SpaceBackground'
-import { motion, Variants } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 import { Check, Lock, ExternalLink, Calendar, MessageCircle, Heart, Zap, Play } from 'lucide-react'
 
 export default function NodrizaPreparacion() {
