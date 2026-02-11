@@ -63,6 +63,10 @@
         {
             "source": "/despliega-tu-proposito/:path*",
             "destination": "https://despliega-tu-proposito.vercel.app/despliega-tu-proposito/:path*"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }
