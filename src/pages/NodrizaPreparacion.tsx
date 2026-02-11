@@ -206,14 +206,24 @@ export default function NodrizaPreparacion() {
           <span className="text-primary-gold font-cinzel text-sm tracking-[0.2em] uppercase">Paso #4</span>
           <h2 className="text-2xl md:text-3xl font-cinzel mt-2 text-white mb-8">Inspírate</h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-50">
-            {[1, 2, 3, 4].map(i => (
-              <div key={i} className="aspect-[9/16] bg-white/5 rounded-lg border border-white/10 flex items-center justify-center">
-                <span className="text-xs text-gray-500 uppercase tracking-widest">Testimonio #{i}</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Placeholder Video 1 */}
+            <div className="aspect-video bg-white/5 rounded-xl border border-white/10 flex flex-col items-center justify-center group hover:bg-white/10 transition-colors cursor-pointer relative overflow-hidden">
+              <div className="w-12 h-12 rounded-full bg-primary-gold/20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Play className="w-6 h-6 text-primary-gold" />
               </div>
-            ))}
+              <span className="text-xs text-primary-gold/70 uppercase tracking-widest font-cinzel">Testimonio #1</span>
+            </div>
+
+            {/* Placeholder Video 2 */}
+            <div className="aspect-video bg-white/5 rounded-xl border border-white/10 flex flex-col items-center justify-center group hover:bg-white/10 transition-colors cursor-pointer relative overflow-hidden">
+              <div className="w-12 h-12 rounded-full bg-primary-gold/20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Play className="w-6 h-6 text-primary-gold" />
+              </div>
+              <span className="text-xs text-primary-gold/70 uppercase tracking-widest font-cinzel">Testimonio #2</span>
+            </div>
           </div>
-          <p className="mt-4 text-xs text-gray-500 italic">Los testimonios se cargarán aquí (Placeholder)</p>
+          <p className="mt-6 text-xs text-gray-500 italic">(Aquí irán los videos incrustados de YouTube/Vimeo)</p>
         </section>
 
         {/* Footer Link */}
