@@ -207,23 +207,32 @@ export default function NodrizaPreparacion() {
           <h2 className="text-2xl md:text-3xl font-cinzel mt-2 text-white mb-8">Inspírate</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {/* Placeholder Video 1 */}
-            <div className="aspect-video bg-white/5 rounded-xl border border-white/10 flex flex-col items-center justify-center group hover:bg-white/10 transition-colors cursor-pointer relative overflow-hidden">
-              <div className="w-12 h-12 rounded-full bg-primary-gold/20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <Play className="w-6 h-6 text-primary-gold" />
-              </div>
-              <span className="text-xs text-primary-gold/70 uppercase tracking-widest font-cinzel">Testimonio #1</span>
+            {/* Testimonio 1 */}
+            <div className="aspect-video rounded-xl overflow-hidden border border-white/10 shadow-lg">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/E2llff-52OA"
+                title="Testimonio 1"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </div>
 
-            {/* Placeholder Video 2 */}
-            <div className="aspect-video bg-white/5 rounded-xl border border-white/10 flex flex-col items-center justify-center group hover:bg-white/10 transition-colors cursor-pointer relative overflow-hidden">
-              <div className="w-12 h-12 rounded-full bg-primary-gold/20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <Play className="w-6 h-6 text-primary-gold" />
-              </div>
-              <span className="text-xs text-primary-gold/70 uppercase tracking-widest font-cinzel">Testimonio #2</span>
+            {/* Testimonio 2 */}
+            <div className="aspect-video rounded-xl overflow-hidden border border-white/10 shadow-lg">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/qPiLfBx2vf4"
+                title="Testimonio 2"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
-          <p className="mt-6 text-xs text-gray-500 italic">(Aquí irán los videos incrustados de YouTube/Vimeo)</p>
         </section>
 
         {/* Footer Link */}
