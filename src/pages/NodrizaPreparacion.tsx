@@ -145,20 +145,31 @@ export default function NodrizaPreparacion() {
               <motion.div
                 key={card.id}
                 variants={itemVariants}
-                className="relative bg-primary-navy/40 border border-white/5 p-8 rounded-xl backdrop-blur-md overflow-hidden hover:border-primary-gold/30 transition-colors group"
+                className="bg-primary-navy/60 border border-white/5 p-6 md:p-8 rounded-lg flex items-start gap-6 hover:border-primary-gold/30 transition-all group backdrop-blur-sm"
               >
-                <div className="absolute -right-4 -bottom-8 text-9xl font-cinzel font-black text-white/[0.03] select-none group-hover:text-primary-gold/[0.05] transition-colors duration-500">
+                {/* Number */}
+                <div className="font-cinzel text-6xl md:text-7xl font-black text-white/[0.08] group-hover:text-primary-gold/[0.15] transition-colors select-none leading-none shrink-0">
                   {card.id}
                 </div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-primary-gold/10 border border-primary-gold/20">
-                    {card.icon}
+
+                {/* Content */}
+                <div className="space-y-3 pt-2">
+                  <div className="flex items-center gap-3">
+                    {/* Icon wrapper to ensure size consistency */}
+                    <div className="text-primary-gold shrink-0">
+                      {card.icon}
+                    </div>
+                    <h3 className="font-cinzel text-lg font-bold text-white uppercase tracking-wider">
+                      {card.title}
+                    </h3>
                   </div>
-                  <h3 className="font-cinzel text-lg md:text-xl text-white font-bold">{card.title}</h3>
+
+                  <div className="pl-1 border-l border-white/10 ml-2">
+                    <p className="pl-4 text-gray-300 text-sm leading-relaxed font-light">
+                      {card.desc}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed relative z-10">
-                  {card.desc}
-                </p>
               </motion.div>
             ))}
           </div>
