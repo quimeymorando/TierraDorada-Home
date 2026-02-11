@@ -14,7 +14,7 @@ function TitleUpdater() {
       case '/nodriza':
         document.title = 'NODRIZA | Sincronizando...';
         break;
-      case '/nodriza-preparacion':
+      case '/confirmacion-nodriza':
         document.title = 'NODRIZA | Preparación';
         break;
       case '/abundancia-masterclass':
@@ -40,7 +40,7 @@ function App() {
               <h1 className="text-2xl font-black text-primary animate-pulse tracking-[0.5em] uppercase">Sincronizando con Nodriza...</h1>
             </div>
           } />
-          <Route path="/nodriza-preparacion" element={<NodrizaPreparacion />} />
+          <Route path="/confirmacion-nodriza" element={<NodrizaPreparacion />} />
           <Route path="/abundancia-masterclass" element={
             <div className="flex min-h-screen items-center justify-center bg-bg text-gray-900">
               <h1 className="text-2xl font-black text-accent animate-pulse tracking-[0.5em] uppercase">Accediendo a la Abundancia...</h1>

@@ -28,7 +28,9 @@ export default function NodrizaPreparacion() {
 
   return (
     <div className="relative min-h-screen text-white overflow-x-hidden font-montserrat">
-      <SpaceBackground />
+      <div className="fixed inset-0 w-full h-full z-0">
+        <SpaceBackground />
+      </div>
 
       <main className="relative z-10 container mx-auto px-4 py-12 md:py-20 max-w-5xl">
 
