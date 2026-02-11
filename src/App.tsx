@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import NodrizaPreparacion from './pages/NodrizaPreparacion';
 import Home from './pages/Home';
 
 function TitleUpdater() {
@@ -12,6 +13,9 @@ function TitleUpdater() {
         break;
       case '/nodriza':
         document.title = 'NODRIZA | Sincronizando...';
+        break;
+      case '/nodriza-preparacion':
+        document.title = 'NODRIZA | Preparación';
         break;
       case '/abundancia-masterclass':
         document.title = 'ABUNDANCIA | Accediendo...';
@@ -36,6 +40,7 @@ function App() {
               <h1 className="text-2xl font-black text-primary animate-pulse tracking-[0.5em] uppercase">Sincronizando con Nodriza...</h1>
             </div>
           } />
+          <Route path="/nodriza-preparacion" element={<NodrizaPreparacion />} />
           <Route path="/abundancia-masterclass" element={
             <div className="flex min-h-screen items-center justify-center bg-bg text-gray-900">
               <h1 className="text-2xl font-black text-accent animate-pulse tracking-[0.5em] uppercase">Accediendo a la Abundancia...</h1>

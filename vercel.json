@@ -9,10 +9,6 @@
             "destination": "https://nodriza-nu.vercel.app/:path*"
         },
         {
-            "source": "/nodriza-preparacion",
-            "destination": "https://nodriza-webapp.vercel.app/nodriza/?view=confirmation"
-        },
-        {
             "source": "/asume-tu-abundancia",
             "destination": "https://masterclass-abundancia.vercel.app/abundancia-masterclass"
         },
