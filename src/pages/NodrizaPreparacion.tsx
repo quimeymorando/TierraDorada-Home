@@ -180,13 +180,18 @@ export default function NodrizaPreparacion() {
               <span className="text-primary-gold font-cinzel text-sm tracking-[0.2em] uppercase">Paso #3</span>
               <h2 className="text-2xl md:text-4xl font-cinzel mt-2 mb-6 text-white">Confirmación Definitiva</h2>
               <p className="text-gray-300 mb-8 max-w-xl mx-auto">
-                He enviado una invitación a tu calendario. Por favor dale click en 'Añadir al calendario' y responde 'SÍ' a la asistencia para bloquear el espacio.
+                He enviado una invitación a tu calendario. Por favor dale click en <strong className="text-white">'Añadir al calendario'</strong> y responde <strong className="text-white">'SÍ'</strong> a la asistencia para bloquear el espacio.
               </p>
 
-              <button className="button-gold-metallic px-8 py-4 rounded-full text-base md:text-lg flex items-center justify-center gap-3 mx-auto shadow-[0_0_25px_rgba(166,124,0,0.4)] hover:shadow-[0_0_40px_rgba(166,124,0,0.6)]">
+              <a
+                href="https://calendar.google.com/calendar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-gold-metallic px-8 py-4 rounded-full text-base md:text-lg flex items-center justify-center gap-3 mx-auto shadow-[0_0_25px_rgba(166,124,0,0.4)] hover:shadow-[0_0_40px_rgba(166,124,0,0.6)] w-fit"
+              >
                 <Calendar className="w-5 h-5" />
                 <span>IR A MI CALENDARIO</span>
-              </button>
+              </a>
             </div>
           </div>
         </motion.section>
