@@ -1,27 +1,21 @@
 {
-    "redirects": [
+    "rewrites": [
         {
             "source": "/taller",
-            "destination": "https://taller-ingenieria-de-proposito.vercel.app/",
-            "permanent": false
+            "destination": "https://taller-ingenieria-de-proposito.vercel.app/"
         },
         {
             "source": "/taller/:path*",
-            "destination": "https://taller-ingenieria-de-proposito.vercel.app/:path*",
-            "permanent": false
+            "destination": "https://taller-ingenieria-de-proposito.vercel.app/:path*"
         },
         {
             "source": "/taller-ingenieria-de-proposito",
-            "destination": "https://taller-ingenieria-de-proposito.vercel.app/",
-            "permanent": false
+            "destination": "https://taller-ingenieria-de-proposito.vercel.app/"
         },
         {
             "source": "/taller-ingenieria-de-proposito/:path*",
-            "destination": "https://taller-ingenieria-de-proposito.vercel.app/:path*",
-            "permanent": false
-        }
-    ],
-    "rewrites": [
+            "destination": "https://taller-ingenieria-de-proposito.vercel.app/:path*"
+        },
         {
             "source": "/nodriza",
             "destination": "https://nodriza-nu.vercel.app/"
