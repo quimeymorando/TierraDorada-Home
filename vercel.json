@@ -58,11 +58,11 @@
         },
         {
             "source": "/despliega-tu-proposito",
-            "destination": "https://despliega-tu-proposito.vercel.app/despliega-tu-proposito"
+            "destination": "https://despliega-tu-proposito.vercel.app/"
         },
         {
             "source": "/despliega-tu-proposito/:path*",
-            "destination": "https://despliega-tu-proposito.vercel.app/despliega-tu-proposito/:path*"
+            "destination": "https://despliega-tu-proposito.vercel.app/:path*"
         },
         {
             "source": "/(.*)",
