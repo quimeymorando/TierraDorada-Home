@@ -49,11 +49,18 @@ export function FounderSection() {
                         className="flex-1 w-full max-w-sm lg:max-w-md order-1 lg:order-2"
                     >
                         <div className="aspect-[3/4] relative rounded-sm overflow-hidden border border-[#A67C00]/20 bg-white shadow-[0_20px_50px_rgba(166,124,0,0.15)] group cursor-pointer">
-                            <a href="/joaquinalterman" className="absolute inset-0 block bg-[#F5F5F0] transition-transform duration-700 hover:scale-105">
-                                {/* Minimalist Typographic Art instead of missing image */}
-                                <div className="flex flex-col items-center justify-center h-full p-8 text-center border-[1px] border-[#A67C00]/10 m-3 opacity-80 group-hover:opacity-100 transition-opacity">
-                                    <span className="font-cinzel text-[12rem] text-[#A67C00]/10 leading-none select-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">J</span>
-                                    <span className="font-cinzel text-xs text-[#001A33] tracking-[0.4em] z-10 bg-[#F5F5F0] px-4 py-2 border border-[#A67C00]/20">FUNDADOR</span>
+                            <a href="/joaquinalterman" className="absolute inset-0 block overflow-hidden transition-transform duration-700 hover:scale-105">
+                                {/* Imagen de Joaquin */}
+                                <img
+                                    src="https://assets.cdn.filesafe.space/uuaiNCJCRvymWQ2ejuex/media/698b6cc38682155edc61e55e.png"
+                                    alt="Joaquin Alterman - Fundador de Tierra Dorada"
+                                    className="w-full h-full object-cover object-top"
+                                />
+                                {/* Marco interno dorado */}
+                                <div className="absolute inset-3 border border-[#A67C00]/30 pointer-events-none z-10" />
+                                {/* Etiqueta FUNDADOR */}
+                                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+                                    <span className="font-cinzel text-xs text-white tracking-[0.4em] bg-[#001A33]/60 backdrop-blur-sm px-4 py-2 border border-[#A67C00]/40">FUNDADOR</span>
                                 </div>
                             </a>
                         </div>
