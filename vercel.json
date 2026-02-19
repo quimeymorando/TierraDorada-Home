@@ -1,4 +1,26 @@
 {
+    "redirects": [
+        {
+            "source": "/taller",
+            "destination": "https://taller-ingenieria-de-proposito.vercel.app/",
+            "permanent": false
+        },
+        {
+            "source": "/taller/:path*",
+            "destination": "https://taller-ingenieria-de-proposito.vercel.app/:path*",
+            "permanent": false
+        },
+        {
+            "source": "/taller-ingenieria-de-proposito",
+            "destination": "https://taller-ingenieria-de-proposito.vercel.app/",
+            "permanent": false
+        },
+        {
+            "source": "/taller-ingenieria-de-proposito/:path*",
+            "destination": "https://taller-ingenieria-de-proposito.vercel.app/:path*",
+            "permanent": false
+        }
+    ],
     "rewrites": [
         {
             "source": "/nodriza",
@@ -47,14 +69,6 @@
         {
             "source": "/joaquinalterman/:path*",
             "destination": "https://joaquin-alterman.vercel.app/:path*"
-        },
-        {
-            "source": "/taller-ingenieria-de-proposito",
-            "destination": "https://taller-ingenieria-de-proposito.vercel.app/"
-        },
-        {
-            "source": "/taller-ingenieria-de-proposito/:path*",
-            "destination": "https://taller-ingenieria-de-proposito.vercel.app/:path*"
         },
         {
             "source": "/despliega-tu-proposito",
