@@ -34,11 +34,11 @@
         },
         {
             "source": "/abundancia-masterclass",
-            "destination": "https://masterclass-abundancia-landing.vercel.app/"
+            "destination": "https://masterclass-abundancia-landing.vercel.app/abundancia-masterclass"
         },
         {
             "source": "/abundancia-masterclass/:path*",
-            "destination": "https://masterclass-abundancia-landing.vercel.app/:path*"
+            "destination": "https://masterclass-abundancia-landing.vercel.app/abundancia-masterclass/:path*"
         },
         {
             "source": "/taller-lo-hago-real",
