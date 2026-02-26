@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import NodrizaPreparacion from './pages/NodrizaPreparacion';
 import Home from './pages/Home';
 
 function TitleUpdater() {
   const location = useLocation();
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
     switch (location.pathname) {
@@ -22,6 +23,16 @@ function TitleUpdater() {
         break;
       default:
         document.title = 'Tierra Dorada';
+    }
+
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+    } else {
+      // @ts-ignore
+      if (window.fbq) {
+        // @ts-ignore
+        window.fbq('track', 'PageView');
+      }
     }
   }, [location]);
 
