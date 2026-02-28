@@ -4,7 +4,6 @@ import {
     Clapperboard, ArrowRight, MessageCircle, Check,
     type LucideIcon,
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 /* ─── Particles (stable seeds) ─── */
 const heroParticles = [
@@ -489,14 +488,16 @@ export function ServiciosCTA() {
                 </motion.p>
 
                 <motion.div variants={fadeUp}>
-                    <Link
-                        to="/agencia#contacto"
+                    <a
+                        href="https://wa.me/5492214592926"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="glow-gold group inline-flex items-center gap-3 bg-[#0B1628] border border-[#C9A84C] text-[#C9A84C] font-inter font-semibold text-sm tracking-wider uppercase px-10 py-5 rounded-full hover:bg-[#C9A84C]/10 transition-all duration-300 justify-center"
                     >
                         <MessageCircle className="w-4 h-4" />
                         Agendar Sesión de Expansión
                         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </Link>
+                    </a>
                 </motion.div>
             </motion.div>
         </section>

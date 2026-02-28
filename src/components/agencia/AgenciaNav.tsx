@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export function AgenciaNav() {
   const [scrolled, setScrolled] = useState(false);
@@ -13,14 +13,11 @@ export function AgenciaNav() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const location = useLocation();
-  const isOffPage = location.pathname === '/esencia' || location.pathname === '/servicios';
 
-  // Links: toPath = React Router Link, href = anchor en la misma página
   const navLinks = [
     { label: 'Esencia', toPath: '/esencia', href: null },
     { label: 'Servicios', toPath: '/servicios', href: null },
-    { label: 'Contacto', toPath: null, href: isOffPage ? '/agencia#contacto' : '#contacto' },
+    { label: 'Contacto', toPath: null, href: 'https://wa.me/5492214592926' },
   ];
 
   return (
@@ -68,12 +65,12 @@ export function AgenciaNav() {
                 </a>
               )
             )}
-            <Link
-              to="/agencia#contacto"
+            <a
+              href="https://wa.me/5492214592926" target="_blank" rel="noopener noreferrer"
               className="glow-gold font-inter text-xs font-semibold tracking-widest uppercase border border-[#C9A84C]/60 text-[#C9A84C] px-5 py-2.5 rounded-full hover:bg-[#C9A84C]/10 transition-all duration-300"
             >
               Iniciar Expansión
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -116,13 +113,13 @@ export function AgenciaNav() {
               </a>
             )
           )}
-          <Link
-            to="/agencia#contacto"
+          <a
+            href="https://wa.me/5492214592926" target="_blank" rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
             className="font-inter text-center text-xs font-semibold tracking-widest uppercase border border-[#C9A84C]/60 text-[#C9A84C] px-5 py-3 rounded-full hover:bg-[#C9A84C]/10 transition-all duration-300 mt-2"
           >
             Iniciar Expansión
-          </Link>
+          </a>
         </motion.div>
       )}
     </motion.nav>

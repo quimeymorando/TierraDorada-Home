@@ -208,7 +208,7 @@ export function AgenciaServicios() {
                         ¿No sabés por dónde empezar? Te guiamos.
                     </p>
                     <a
-                        href="#contacto"
+                        href="https://wa.me/5492214592926" target="_blank" rel="noopener noreferrer"
                         className="glow-gold inline-flex items-center gap-2 bg-[#0B1628] border border-[#C9A84C] text-[#C9A84C] font-inter font-semibold text-xs tracking-wider uppercase px-8 py-4 rounded-full hover:bg-[#C9A84C]/10 transition-all duration-300"
                     >
                         Solicitar Consultoría Gratuita

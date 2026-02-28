@@ -1,6 +1,5 @@
 import { motion, type Variants } from 'framer-motion';
 import { ArrowRight, MessageCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 /* ─── Animation helpers ─── */
 const fadeUp: Variants = {
@@ -487,14 +486,16 @@ export function EsenciaCTA() {
 
                     {/* CTA Button */}
                     <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link
-                            to="/agencia#contacto"
+                        <a
+                            href="https://wa.me/5492214592926"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="glow-gold group flex items-center gap-3 bg-[#0B1628] border border-[#C9A84C] text-[#C9A84C] font-inter font-semibold text-sm tracking-wider uppercase px-8 py-4 rounded-full hover:bg-[#C9A84C]/10 transition-all duration-300 w-full sm:w-auto justify-center"
                         >
                             <MessageCircle className="w-4 h-4" />
                             Comencemos a escalar tu negocio
                             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                        </Link>
+                        </a>
                     </motion.div>
                 </motion.div>
             </div>
