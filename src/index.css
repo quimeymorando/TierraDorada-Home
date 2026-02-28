@@ -14,6 +14,19 @@
   /* Tipografía */
   --font-cinzel: "Cinzel", serif;
   --font-montserrat: "Montserrat", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-inter: "Inter", sans-serif;
+
+  /* Colores Agencia Tierra Dorada */
+  --color-agencia-night: #0B1628;
+  --color-agencia-night-mid: #0F1E36;
+  --color-agencia-cream: #FAF7F2;
+  --color-agencia-cream-dark: #F2EDE4;
+  --color-agencia-cyan: #22D3EE;
+  --color-agencia-violet: #7C3AED;
+  --color-agencia-gold: #C9A84C;
+  --color-agencia-gold-light: #F0D080;
+  --color-agencia-gold-dark: #9A7A2A;
 
   /* Gradientes */
   --background-image-celeste-hermoso: radial-gradient(circle at 20% 30%, rgba(0, 58, 107, 1) 0%, rgba(0, 45, 82, 1) 100%);
@@ -117,5 +130,84 @@
     opacity: 0;
     background: linear-gradient(90deg, white, transparent);
     animation: shooting-star 4s linear infinite;
+  }
+
+  /* =====================================================
+     AGENCIA TIERRA DORADA — Utilidades de diseño
+  ===================================================== */
+
+  .font-playfair {
+    font-family: "Playfair Display", serif;
+  }
+
+  .font-inter {
+    font-family: "Inter", sans-serif;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.35s ease;
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(34, 211, 238, 0.25);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 30px rgba(34, 211, 238, 0.08);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 0 transparent;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .glow-gold:hover {
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.4), 0 0 40px rgba(201, 168, 76, 0.15);
+    transform: scale(1.02);
+  }
+
+  .text-agencia-gold {
+    background: linear-gradient(135deg, #9A7A2A 0%, #C9A84C 40%, #F0D080 55%, #C9A84C 70%, #9A7A2A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Malla animada del Hero (mesh gradient background) */
+  @keyframes meshFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -20px) scale(1.05); }
+    66% { transform: translate(-20px, 30px) scale(0.98); }
+  }
+
+  @keyframes meshFloat2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-40px, 30px) scale(1.03); }
+    66% { transform: translate(25px, -35px) scale(1.06); }
+  }
+
+  .mesh-orb-1 {
+    animation: meshFloat 14s ease-in-out infinite;
+  }
+
+  .mesh-orb-2 {
+    animation: meshFloat2 18s ease-in-out infinite;
+  }
+
+  .mesh-orb-3 {
+    animation: meshFloat 22s ease-in-out infinite reverse;
+  }
+
+  /* Partículas flotantes */
+  @keyframes floatParticle {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+    50% { transform: translateY(-30px) rotate(180deg); opacity: 0.8; }
+  }
+
+  .float-particle {
+    animation: floatParticle 6s ease-in-out infinite;
   }
 }

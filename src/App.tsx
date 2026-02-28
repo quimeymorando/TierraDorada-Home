@@ -2,6 +2,9 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useEffect, useRef } from 'react';
 import NodrizaPreparacion from './pages/NodrizaPreparacion';
 import Home from './pages/Home';
+import Agencia from './pages/Agencia';
+import Esencia from './pages/Esencia';
+import Servicios from './pages/Servicios';
 
 function TitleUpdater() {
   const location = useLocation();
@@ -9,6 +12,15 @@ function TitleUpdater() {
 
   useEffect(() => {
     switch (location.pathname) {
+      case '/servicios':
+        document.title = 'Agencia Tierra Dorada | Servicios';
+        break;
+      case '/esencia':
+        document.title = 'Agencia Tierra Dorada | Nuestra Esencia';
+        break;
+      case '/agencia':
+        document.title = 'Agencia Tierra Dorada | Tecnología & Consciencia';
+        break;
       case '/':
         document.title = 'Tierra Dorada | La Nave Madre';
         break;
@@ -45,6 +57,9 @@ function App() {
       <Router>
         <TitleUpdater />
         <Routes>
+          <Route path="/servicios" element={<Servicios />} />
+          <Route path="/esencia" element={<Esencia />} />
+          <Route path="/agencia" element={<Agencia />} />
           <Route path="/" element={<Home />} />
           <Route path="/nodriza" element={
             <div className="flex min-h-screen items-center justify-center bg-bg text-gray-900">
