@@ -15,10 +15,10 @@ function TitleUpdater() {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
     switch (location.pathname) {
-      case '/servicios':
+      case '/agencia/servicios':
         document.title = 'Agencia Tierra Dorada | Servicios';
         break;
-      case '/esencia':
+      case '/agencia/esencia':
         document.title = 'Agencia Tierra Dorada | Nuestra Esencia';
         break;
       case '/agencia':
@@ -60,8 +60,8 @@ function App() {
       <Router>
         <TitleUpdater />
         <Routes>
-          <Route path="/servicios" element={<Servicios />} />
-          <Route path="/esencia" element={<Esencia />} />
+          <Route path="/agencia/servicios" element={<Servicios />} />
+          <Route path="/agencia/esencia" element={<Esencia />} />
           <Route path="/agencia" element={<Agencia />} />
           <Route path="/" element={<Home />} />
           <Route path="/nodriza" element={

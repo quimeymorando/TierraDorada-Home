@@ -15,8 +15,8 @@ export function AgenciaNav() {
 
 
   const navLinks = [
-    { label: 'Esencia', toPath: '/esencia', href: null },
-    { label: 'Servicios', toPath: '/servicios', href: null },
+    { label: 'Esencia', toPath: '/agencia/esencia', href: null },
+    { label: 'Servicios', toPath: '/agencia/servicios', href: null },
     { label: 'Contacto', toPath: null, href: 'https://wa.me/5492214592926' },
   ];
 
