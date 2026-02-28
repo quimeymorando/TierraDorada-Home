@@ -11,6 +11,9 @@ function TitleUpdater() {
   const isFirstRender = useRef(true);
 
   useEffect(() => {
+    // Siempre volver al tope al cambiar de ruta
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
     switch (location.pathname) {
       case '/servicios':
         document.title = 'Agencia Tierra Dorada | Servicios';
