@@ -250,11 +250,11 @@ interface FounderBlockProps {
     role: string;
     bio: string;
     accentColor: string;
+    imageSrc: string;
     reverse?: boolean;
-    index: number;
 }
 
-function FounderBlock({ name, role, bio, accentColor, reverse = false, index }: FounderBlockProps) {
+function FounderBlock({ name, role, bio, accentColor, imageSrc, reverse = false }: FounderBlockProps) {
     const slideFrom: Variants = {
         hidden: { opacity: 0, x: reverse ? 40 : -40 },
         visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.1 } },
@@ -270,29 +270,39 @@ function FounderBlock({ name, role, bio, accentColor, reverse = false, index }: 
             variants={stagger}
             className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-14 items-center`}
         >
-            {/* Image placeholder */}
+            {/* Imagen real del fundador */}
             <motion.div variants={slideFrom} className="w-full md:w-2/5 flex-shrink-0">
                 <div
-                    className="relative w-full rounded-2xl overflow-hidden"
+                    className="relative w-full rounded-2xl overflow-hidden group"
                     style={{
                         aspectRatio: '4/5',
-                        background: 'rgba(255,255,255,0.03)',
                         border: `1px solid ${accentColor}30`,
-                        boxShadow: `0 0 40px ${accentColor}10, inset 0 0 60px rgba(0,0,0,0.2)`,
+                        boxShadow: `0 0 40px ${accentColor}15, 0 20px 60px rgba(0,0,0,0.4)`,
                     }}
                 >
+                    {/* Foto */}
+                    <img
+                        src={imageSrc}
+                        alt={name}
+                        className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                    {/* Overlay gradiente inferior */}
+                    <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{ background: `linear-gradient(to top, rgba(11,22,40,0.65) 0%, rgba(11,22,40,0.1) 45%, transparent 70%)` }}
+                    />
                     {/* Corner accents */}
-                    <div className="absolute top-3 left-3 w-6 h-6 border-t border-l rounded-tl-sm" style={{ borderColor: `${accentColor}60` }} />
-                    <div className="absolute top-3 right-3 w-6 h-6 border-t border-r rounded-tr-sm" style={{ borderColor: `${accentColor}60` }} />
-                    <div className="absolute bottom-3 left-3 w-6 h-6 border-b border-l rounded-bl-sm" style={{ borderColor: `${accentColor}60` }} />
-                    <div className="absolute bottom-3 right-3 w-6 h-6 border-b border-r rounded-br-sm" style={{ borderColor: `${accentColor}60` }} />
-
-                    {/* Placeholder content */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-30">
-                        <div className="w-16 h-16 rounded-full border" style={{ borderColor: accentColor }} />
-                        <div className="w-20 h-px" style={{ background: accentColor }} />
-                        <span className="font-inter text-xs tracking-widest uppercase" style={{ color: accentColor }}>
-                            {index === 0 ? 'J.A.' : 'Q.M.'}
+                    <div className="absolute top-3 left-3 w-6 h-6 border-t border-l z-10" style={{ borderColor: `${accentColor}70` }} />
+                    <div className="absolute top-3 right-3 w-6 h-6 border-t border-r z-10" style={{ borderColor: `${accentColor}70` }} />
+                    <div className="absolute bottom-3 left-3 w-6 h-6 border-b border-l z-10" style={{ borderColor: `${accentColor}70` }} />
+                    <div className="absolute bottom-3 right-3 w-6 h-6 border-b border-r z-10" style={{ borderColor: `${accentColor}70` }} />
+                    {/* Etiqueta inferior */}
+                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap">
+                        <span
+                            className="font-inter text-[10px] font-semibold tracking-[0.35em] uppercase px-4 py-1.5 rounded-full backdrop-blur-sm"
+                            style={{ color: accentColor, background: 'rgba(11,22,40,0.7)', border: `1px solid ${accentColor}30` }}
+                        >
+                            Co-Fundador
                         </span>
                     </div>
                 </div>
@@ -304,22 +314,13 @@ function FounderBlock({ name, role, bio, accentColor, reverse = false, index }: 
                     className="glass-card rounded-2xl p-7 md:p-10"
                     style={{ background: 'rgba(255,255,255,0.04)', border: `1px solid ${accentColor}18` }}
                 >
-                    <span
-                        className="font-inter text-xs font-bold tracking-[0.35em] uppercase mb-2 block"
-                        style={{ color: accentColor }}
-                    >
+                    <span className="font-inter text-xs font-bold tracking-[0.35em] uppercase mb-2 block" style={{ color: accentColor }}>
                         Co-Fundador
                     </span>
-                    <h3 className="font-playfair text-white text-2xl md:text-3xl font-semibold mb-1">
-                        {name}
-                    </h3>
-                    <p className="font-inter text-sm font-medium mb-5" style={{ color: `${accentColor}CC` }}>
-                        {role}
-                    </p>
+                    <h3 className="font-playfair text-white text-2xl md:text-3xl font-semibold mb-1">{name}</h3>
+                    <p className="font-inter text-sm font-medium mb-5" style={{ color: `${accentColor}CC` }}>{role}</p>
                     <div className="w-12 h-px mb-6" style={{ background: `linear-gradient(to right, ${accentColor}, transparent)` }} />
-                    <p className="font-inter text-white/55 leading-relaxed text-base">
-                        {bio}
-                    </p>
+                    <p className="font-inter text-white/55 leading-relaxed text-base">{bio}</p>
                 </div>
             </motion.div>
         </motion.div>
@@ -333,6 +334,7 @@ export function EsenciaFundadores() {
             role: 'Co-Fundador & Estratega',
             bio: 'Con una profunda comprensión de la estructura digital y la psicología humana, Joaquin diseña las arquitecturas que permiten a las empresas escalar sin perder su centro. Su enfoque fusiona la rentabilidad con el propósito.',
             accentColor: '#C9A84C',
+            imageSrc: 'https://assets.cdn.filesafe.space/uuaiNCJCRvymWQ2ejuex/media/698b6cc38682155edc61e55e.png',
             reverse: false,
         },
         {
@@ -340,9 +342,11 @@ export function EsenciaFundadores() {
             role: 'Co-Fundador & Director Tecnológico',
             bio: 'Especialista en llevar la tecnología de vanguardia al servicio de la visión empresarial. Quimey transforma ideas abstractas en ecosistemas interactivos, estéticos y de alta conversión, creando experiencias digitales inolvidables.',
             accentColor: '#22D3EE',
+            imageSrc: '/quimey-profile.png',
             reverse: true,
         },
     ];
+
 
     return (
         <section
@@ -393,15 +397,15 @@ export function EsenciaFundadores() {
 
                 {/* Zigzag blocks */}
                 <div className="flex flex-col gap-16 md:gap-24">
-                    {founders.map((f, i) => (
+                    {founders.map((f) => (
                         <FounderBlock
                             key={f.name}
                             name={f.name}
                             role={f.role}
                             bio={f.bio}
                             accentColor={f.accentColor}
+                            imageSrc={f.imageSrc}
                             reverse={f.reverse}
-                            index={i}
                         />
                     ))}
                 </div>
