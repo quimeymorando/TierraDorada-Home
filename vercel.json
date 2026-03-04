@@ -25,6 +25,22 @@
             "destination": "https://nodriza-nu.vercel.app/:path*"
         },
         {
+            "source": "/agencia",
+            "destination": "https://agencia-tierra-dorada.vercel.app/"
+        },
+        {
+            "source": "/agencia/:path*",
+            "destination": "https://agencia-tierra-dorada.vercel.app/:path*"
+        },
+        {
+            "source": "/servicios",
+            "destination": "https://agencia-tierra-dorada.vercel.app/servicios"
+        },
+        {
+            "source": "/esencia",
+            "destination": "https://agencia-tierra-dorada.vercel.app/esencia"
+        },
+        {
             "source": "/asume-tu-abundancia",
             "destination": "https://masterclass-abundancia.vercel.app/abundancia-masterclass"
         },
