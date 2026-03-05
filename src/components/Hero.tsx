@@ -25,14 +25,7 @@ export function Hero() {
                     Integración del Cielo y la Tierra. Materializa tu espíritu.
                 </p>
 
-                <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-                    <button className="button-gold-metallic px-12 py-5 rounded-full font-cinzel text-xs tracking-[0.3em]">
-                        DAR EL SALTO
-                    </button>
-                    <button className="px-12 py-5 border border-white/20 rounded-full font-cinzel text-xs tracking-[0.3em] hover:bg-white/5 transition-all">
-                        LA NAVE
-                    </button>
-                </div>
+
             </motion.div>
         </section>
     );
