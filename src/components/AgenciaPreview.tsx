@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Bot, TrendingUp, Fingerprint, Clapperboard, Users } from 'lucide-react';
-import { useEffect, useRef } from 'react';
 
 /* ─── Servicio pills ─── */
 const servicePills = [
@@ -12,111 +11,11 @@ const servicePills = [
     { icon: Clapperboard, label: 'Audiovisual' },
 ];
 
-/* ─── Canvas animation: partículas flotantes conectadas ─── */
-function ConstellationCanvas() {
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
-
-        let animId: number;
-        const GOLD = 'rgba(201, 168, 76,';
-        const CYAN = 'rgba(34, 211, 238,';
-        const WHITE = 'rgba(255, 255, 255,';
-
-        const resize = () => {
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-        };
-        resize();
-        window.addEventListener('resize', resize);
-
-        type Particle = {
-            x: number; y: number;
-            vx: number; vy: number;
-            r: number;
-            color: string;
-            alpha: number;
-        };
-
-        const N = 38;
-        const particles: Particle[] = Array.from({ length: N }, () => {
-            const palette = [GOLD, CYAN, WHITE];
-            return {
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.45,
-                vy: (Math.random() - 0.5) * 0.45,
-                r: Math.random() * 2.2 + 1,
-                color: palette[Math.floor(Math.random() * palette.length)],
-                alpha: Math.random() * 0.5 + 0.3,
-            };
-        });
-
-        const draw = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Conexiones
-            for (let i = 0; i < N; i++) {
-                for (let j = i + 1; j < N; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 120) {
-                        const opacity = (1 - dist / 120) * 0.18;
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(201,168,76,${opacity})`;
-                        ctx.lineWidth = 0.7;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-
-            // Nodos
-            particles.forEach((p) => {
-                p.x += p.vx;
-                p.y += p.vy;
-                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = `${p.color}${p.alpha})`;
-                ctx.shadowBlur = 8;
-                ctx.shadowColor = `${p.color}0.6)`;
-                ctx.fill();
-                ctx.shadowBlur = 0;
-            });
-
-            animId = requestAnimationFrame(draw);
-        };
-
-        draw();
-        return () => {
-            cancelAnimationFrame(animId);
-            window.removeEventListener('resize', resize);
-        };
-    }, []);
-
-    return (
-        <canvas
-            ref={canvasRef}
-            className="absolute inset-0 w-full h-full"
-            style={{ display: 'block' }}
-        />
-    );
-}
-
 /* ─── Componente principal ─── */
 export function AgenciaPreview() {
     return (
         <section
-            className="w-full py-32 md:py-44 relative overflow-hidden border-t border-[#A67C00]/20"
+            className="w-full py-16 md:py-24 relative overflow-hidden border-t border-[#A67C00]/20"
             style={{ backgroundColor: '#001A33' }}
         >
             {/* Orbs de fondo (igual que el hero) */}
@@ -143,9 +42,9 @@ export function AgenciaPreview() {
                         </span>
 
                         {/* Título */}
-                        <h2 className="font-cinzel text-white leading-none mb-8" style={{ fontSize: 'clamp(2.2rem, 5.5vw, 4rem)' }}>
-                            AGENCIA<br />
-                            <span className="text-gold-gradient italic">TIERRA DORADA</span>
+                        <h2 className="font-cinzel text-white leading-tight mb-8" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}>
+                            Agencia<br />
+                            <span className="text-[#C9A84C] italic whitespace-nowrap">Tierra Dorada</span>
                         </h2>
 
                         {/* Descripción */}
@@ -196,47 +95,58 @@ export function AgenciaPreview() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.9, delay: 0.15 }}
-                        className="flex-1 w-full max-w-sm lg:max-w-md"
+                        className="flex-1 w-full flex justify-center lg:justify-end"
                     >
-                        <a href="/agencia" className="block group cursor-pointer">
-                            <div
-                                className="relative overflow-hidden rounded-sm border border-[#A67C00]/25 shadow-[0_20px_60px_rgba(0,26,51,0.6)] group-hover:border-[#A67C00]/50 transition-colors duration-500"
-                                style={{ aspectRatio: '4/3', background: 'rgba(0,10,20,0.7)' }}
-                            >
-                                {/* Constelación animada */}
-                                <ConstellationCanvas />
+                        <a href="/agencia" className="block group cursor-pointer relative flex items-center justify-center min-h-[400px] w-full max-w-lg lg:max-w-xl">
+                            {/* Glow base */}
+                            <div className="absolute bg-[#C9A84C]/10 blur-[100px] w-[20rem] h-[20rem] rounded-full"></div>
 
-                                {/* Overlay con contenido */}
-                                <div className="absolute inset-0 flex flex-col items-center justify-center z-10 p-8 text-center">
-                                    {/* Círculo ATD */}
-                                    <div
-                                        className="w-20 h-20 rounded-full border-2 border-[#C9A84C]/50 flex items-center justify-center mb-5 group-hover:border-[#C9A84C] transition-colors duration-500"
-                                        style={{ background: 'radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%)' }}
-                                    >
-                                        <span className="font-cinzel text-2xl font-bold text-[#C9A84C]">ATD</span>
-                                    </div>
+                            {/* Contenedor */}
+                            <div className="relative w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] md:w-[480px] md:h-[480px] flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+                                {/* Anillo Exterior (Orbitando Fijo) */}
+                                <div className="absolute inset-0 border border-[#C9A84C]/15 rounded-full border-dashed group-hover:border-[#C9A84C]/30 transition-colors duration-500">
+                                </div>
 
-                                    <p className="font-cinzel text-white/80 text-sm tracking-[0.2em] mb-1">AGENCIA</p>
-                                    <p className="font-cinzel text-[#C9A84C] text-base tracking-[0.12em] italic mb-5">Tierra Dorada</p>
+                                {/* Anillos Medios (Fijos) */}
+                                <div className="absolute inset-[4%] md:inset-[6%] border border-[#C9A84C]/20 rounded-full opacity-30">
+                                </div>
+                                <div className="absolute inset-[4%] md:inset-[6%] border border-[#C9A84C]/30 rounded-full group-hover:border-[#C9A84C]/50 transition-colors duration-500">
+                                </div>
 
-                                    <div className="flex flex-wrap gap-2 justify-center">
-                                        {['Tecnología', 'Consciencia', 'Expansión'].map((t) => (
-                                            <span key={t}
-                                                className="text-[10px] font-montserrat font-semibold tracking-widest text-white/35 uppercase px-2 py-0.5 border border-white/10 rounded-full">
-                                                {t}
-                                            </span>
-                                        ))}
+                                {/* Anillo Interior (Orbitando) */}
+                                <div className="absolute inset-[12%] md:inset-[15%] border border-[#C9A84C]/40 rounded-full flex items-center justify-center animate-[spin_15s_linear_infinite]">
+                                    {/* Orbiting Dot */}
+                                    <div className="w-4 h-4 md:w-5 md:h-5 bg-[#C9A84C] rounded-full absolute top-0 -mt-2 md:-mt-2.5 shadow-[0_0_25px_#C9A84C]">
                                     </div>
                                 </div>
 
-                                {/* Marco interior dorado */}
-                                <div className="absolute inset-3 border border-[#A67C00]/20 pointer-events-none z-20 group-hover:border-[#A67C00]/40 transition-colors duration-500" />
+                                {/* Anillo extra de profundidad */}
+                                <div className="absolute inset-[22%] md:inset-[25%] border border-[#C9A84C]/15 rounded-full group-hover:border-[#C9A84C]/25 transition-colors duration-500">
+                                </div>
 
-                                {/* Etiqueta inferior */}
-                                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20">
-                                    <span className="font-cinzel text-[10px] text-white/50 tracking-[0.4em] bg-[#001A33]/80 backdrop-blur-sm px-4 py-1.5 border border-[#A67C00]/25 whitespace-nowrap">
-                                        ALIANZA ESTRATÉGICA
-                                    </span>
+                                {/* Núcleo central */}
+                                <div className="absolute flex items-center justify-center z-10 w-[38%] h-[38%] rounded-full bg-white/5 backdrop-blur-md shadow-[0_0_40px_rgba(201,168,76,0.15)] group-hover:bg-white/10 transition-colors duration-500 group-hover:shadow-[0_0_60px_rgba(201,168,76,0.3)] border border-[#C9A84C]/20">
+
+                                    {/* Icono Tecno-Espiritual Fijo */}
+                                    <div className="relative flex items-center justify-center w-full h-full">
+                                        <svg className="w-[60%] h-[60%] md:w-28 md:h-28 text-[#C9A84C] drop-shadow-[0_0_15px_rgba(201,168,76,0.5)]"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.75"
+                                            strokeLinecap="round" strokeLinejoin="round">
+                                            {/* Estrella base */}
+                                            <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"
+                                                fill="currentColor" fillOpacity="0.05" />
+                                            {/* Círculo interior sutil */}
+                                            <circle cx="12" cy="12" r="3.5" fill="currentColor" fillOpacity="0.1"
+                                                strokeDasharray="1 1" />
+                                            {/* Detalles tipo engranaje/conexion */}
+                                            <path d="m4.93 4.93 14.14 14.14" strokeDasharray="2 2" opacity="0.5" />
+                                            <path d="m19.07 4.93-14.14 14.14" strokeDasharray="2 2" opacity="0.5" />
+                                        </svg>
+                                        {/* Luz interna en el icono */}
+                                        <div className="absolute w-12 h-12 bg-[#C9A84C]/20 rounded-full blur-2xl group-hover:bg-[#C9A84C]/40 transition-colors duration-500">
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </a>
