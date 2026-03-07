@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
-import NodrizaPreparacion from './pages/NodrizaPreparacion';
 import Home from './pages/Home';
 import Agencia from './pages/Agencia';
 import Esencia from './pages/Esencia';
@@ -29,9 +28,6 @@ function TitleUpdater() {
         break;
       case '/nodriza':
         document.title = 'NODRIZA | Sincronizando...';
-        break;
-      case '/confirmacion-nodriza':
-        document.title = 'NODRIZA | Preparación';
         break;
       case '/abundancia-masterclass':
         document.title = 'ABUNDANCIA | Accediendo...';
@@ -69,7 +65,6 @@ function App() {
               <h1 className="text-2xl font-black text-primary animate-pulse tracking-[0.5em] uppercase">Sincronizando con Nodriza...</h1>
             </div>
           } />
-          <Route path="/confirmacion-nodriza" element={<NodrizaPreparacion />} />
           <Route path="/abundancia-masterclass" element={
             <div className="flex min-h-screen items-center justify-center bg-bg text-gray-900">
               <h1 className="text-2xl font-black text-accent animate-pulse tracking-[0.5em] uppercase">Accediendo a la Abundancia...</h1>
