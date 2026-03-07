@@ -21,6 +21,10 @@
             "destination": "https://nodriza-nu.vercel.app/"
         },
         {
+            "source": "/confirmacion",
+            "destination": "https://nodriza-nu.vercel.app/confirmacion"
+        },
+        {
             "source": "/nodriza/:path*",
             "destination": "https://nodriza-nu.vercel.app/:path*"
         },
