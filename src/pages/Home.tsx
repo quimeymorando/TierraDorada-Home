@@ -1,5 +1,6 @@
 import { Hero } from '../components/Hero';
 import { PortalsSection } from '../components/PortalsSection';
+import { CommunitySection } from '../components/CommunitySection';
 import { AgenciaPreview } from '../components/AgenciaPreview';
 import { FounderSection } from '../components/FounderSection';
 import { StatsSection } from '../components/StatsSection';
@@ -12,6 +13,7 @@ export default function Home() {
             <main className="relative z-10 flex flex-col items-center w-full">
                 <Hero />
                 <PortalsSection />
+                <CommunitySection />
                 <AgenciaPreview />
                 <FounderSection />
                 <StatsSection />
