@@ -4,8 +4,7 @@ import { Sparkles, ArrowRight } from 'lucide-react';
 export function CommunitySection() {
     return (
         <section
-            className="w-full py-20 md:py-32 relative overflow-hidden"
-            style={{ backgroundColor: '#FDFBF7' }}
+            className="w-full py-20 md:py-32 relative overflow-hidden bg-gradient-to-b from-[#E4DBBD] to-[#FDFBF7]"
         >
             {/* Brillo sutil de fondo para integrarse al ecosistema Tierra Dorada */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
