@@ -6,18 +6,18 @@ export function Footer() {
             {/* Elementos de fondo Premium */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-[#A67C00]/50 to-transparent" />
-                <div className="absolute -top-[100px] left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#A67C00]/5 blur-[120px] rounded-full" />
+                <div className="absolute -top-[200px] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#A67C00]/5 blur-[120px] rounded-full" />
             </div>
 
-            <div className="container mx-auto px-6 pt-16 pb-8 relative z-10 max-w-7xl">
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-6 mb-12 lg:mb-16">
+            <div className="container mx-auto px-6 pt-12 pb-6 relative z-10 max-w-7xl">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 mb-8 lg:mb-12">
                     
                     {/* Brand Column */}
-                    <div className="col-span-1 md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
+                    <div className="col-span-1 md:col-span-5 lg:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
                         <div className="flex justify-center md:justify-start gap-2 mb-4 text-[#A67C00]">
                             {[1, 2, 3].map(i => <Star key={i} className="h-4 w-4 fill-current opacity-80" />)}
                         </div>
-                        <h4 className="font-cinzel text-xl text-white mb-3 tracking-wider">
+                        <h4 className="font-cinzel text-xl text-white mb-2 tracking-wider">
                             Tierra <span className="text-[#C9A84C]">Dorada</span>
                         </h4>
                         <p className="font-montserrat text-xs text-white/50 leading-relaxed max-w-sm mb-6">
@@ -66,7 +66,7 @@ export function Footer() {
                     </div>
 
                     {/* Links Column 2 */}
-                    <div className="col-span-1 justify-center md:justify-start flex md:col-span-3 lg:col-span-3">
+                    <div className="col-span-1 justify-center md:justify-start flex md:col-span-4 lg:col-span-3">
                         <div className="flex flex-col text-center md:text-left">
                             <h5 className="font-montserrat text-[10px] font-bold text-white/80 uppercase tracking-[0.2em] mb-4">Ecosistema</h5>
                             <a href="/agencia" className="group flex items-center justify-center md:justify-start gap-2 text-xs text-white/50 hover:text-white mb-3 transition-colors">
@@ -84,7 +84,7 @@ export function Footer() {
                 {/* Bottom Bar */}
                 <div className="pt-6 mt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-[9px] sm:text-[10px] font-medium text-white/30 uppercase tracking-[0.3em] text-center md:text-left">
-                        © {new Date().getFullYear()} TIERRA DORADA. TODOS LOS RESERVADOS.
+                        © {new Date().getFullYear()} TIERRA DORADA. TODOS LOS DERECHOS RESERVADOS.
                     </p>
                     
                     <div className="flex items-center gap-2">
