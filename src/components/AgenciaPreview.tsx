@@ -25,7 +25,7 @@ export function AgenciaPreview() {
                 <div className="absolute top-[30%] right-[25%] w-[300px] h-[300px] rounded-full bg-violet-600 blur-[100px] opacity-[0.07]" />
             </div>
 
-            <div className="container mx-auto px-4 max-w-6xl relative z-10">
+            <div className="container mx-auto px-4 max-w-7xl relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
 
                     {/* ── LEFT: Texto ── */}
