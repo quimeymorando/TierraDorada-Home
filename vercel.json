@@ -1,4 +1,16 @@
 {
+    "redirects": [
+        {
+            "source": "/comunidad",
+            "destination": "https://comunidad-tierra-dorada.vercel.app/",
+            "permanent": false
+        },
+        {
+            "source": "/comunidad/:path*",
+            "destination": "https://comunidad-tierra-dorada.vercel.app/:path*",
+            "permanent": false
+        }
+    ],
     "rewrites": [
         {
             "source": "/taller",
@@ -95,14 +107,6 @@
         {
             "source": "/despliega-tu-proposito/:path*",
             "destination": "https://despliega-tu-proposito.vercel.app/:path*"
-        },
-        {
-            "source": "/comunidad",
-            "destination": "https://comunidad-tierra-dorada.vercel.app/"
-        },
-        {
-            "source": "/comunidad/:path*",
-            "destination": "https://comunidad-tierra-dorada.vercel.app/:path*"
         },
         {
             "source": "/(.*)",
