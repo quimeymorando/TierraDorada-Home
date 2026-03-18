@@ -97,6 +97,14 @@
             "destination": "https://despliega-tu-proposito.vercel.app/:path*"
         },
         {
+            "source": "/comunidad",
+            "destination": "https://comunidad-tierra-dorada.vercel.app/"
+        },
+        {
+            "source": "/comunidad/:path*",
+            "destination": "https://comunidad-tierra-dorada.vercel.app/:path*"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html"
         }
