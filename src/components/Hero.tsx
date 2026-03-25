@@ -20,7 +20,7 @@ export function Hero() {
                     Ingeniería Holística al Servicio
                 </div>
 
-                <h1 className="text-4xl md:text-7xl lg:text-[8rem] font-berliner mb-12 text-white leading-tight text-shadow-glow">
+                <h1 className="text-6xl md:text-7xl lg:text-[8rem] font-berliner mb-12 text-white leading-tight text-shadow-glow">
                     TIERRA <br />
                     <span className="text-gold-gradient">DORADA</span>
                 </h1>
