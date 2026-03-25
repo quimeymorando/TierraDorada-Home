@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Berliner';
+  src: url('/Belriner-lxxl0.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   /* Colores mandatorios Nodriza */
   --color-primary-navy: #001A33;
@@ -12,6 +20,7 @@
   --color-section-navy: #001A33;
 
   /* Tipografía */
+  --font-berliner: "Berliner", serif;
   --font-cinzel: "Cinzel", serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-playfair: "Playfair Display", serif;
