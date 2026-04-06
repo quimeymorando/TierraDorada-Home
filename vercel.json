@@ -8,14 +8,6 @@
     ],
     "rewrites": [
         {
-            "source": "/lavosdelamaternidad",
-            "destination": "https://formulario-cata.vercel.app/"
-        },
-        {
-            "source": "/lavosdelamaternidad/:path*",
-            "destination": "https://formulario-cata.vercel.app/:path*"
-        },
-        {
             "source": "/disfrutarlamaternidad/",
             "destination": "https://web-cata.vercel.app/"
         },

@@ -29,6 +29,9 @@ function TitleUpdater() {
       case '/nodriza':
         document.title = 'NODRIZA | Sincronizando...';
         break;
+      case '/lavosdelamaternidad':
+        document.title = 'Tierra Dorada | La Voz de la Maternidad';
+        break;
       case '/abundancia-masterclass':
         document.title = 'ABUNDANCIA | Accediendo...';
         break;
@@ -64,6 +67,13 @@ function App() {
             <div className="flex min-h-screen items-center justify-center bg-bg text-gray-900">
               <h1 className="text-2xl font-black text-primary animate-pulse tracking-[0.5em] uppercase">Sincronizando con Nodriza...</h1>
             </div>
+          } />
+          <Route path="/lavosdelamaternidad" element={
+            <iframe 
+              src="https://formulario-cata.vercel.app/" 
+              style={{ width: '100vw', height: '100vh', border: 'none', margin: 0, padding: 0, display: 'block' }}
+              title="La Voz de la Maternidad"
+            />
           } />
           <Route path="/abundancia-masterclass" element={
             <div className="flex min-h-screen items-center justify-center bg-bg text-gray-900">
