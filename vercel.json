@@ -1,12 +1,13 @@
 {
-    "redirects": [
+    "rewrites": [
         {
             "source": "/disfrutarlamaternidad",
-            "destination": "https://web-cata.vercel.app/",
-            "permanent": true
-        }
-    ],
-    "rewrites": [
+            "destination": "https://web-cata.vercel.app/"
+        },
+        {
+            "source": "/disfrutarlamaternidad/:path*",
+            "destination": "https://web-cata.vercel.app/:path*"
+        },
         {
             "source": "/taller",
             "destination": "https://taller-ingenieria-de-proposito.vercel.app/"
