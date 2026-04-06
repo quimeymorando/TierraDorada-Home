@@ -1,4 +1,11 @@
 {
+    "redirects": [
+        {
+            "source": "/disfrutarlamaternidad",
+            "destination": "https://web-cata.vercel.app/",
+            "permanent": true
+        }
+    ],
     "rewrites": [
         {
             "source": "/taller",
