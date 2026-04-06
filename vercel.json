@@ -1,7 +1,14 @@
 {
-    "rewrites": [
+    "redirects": [
         {
             "source": "/disfrutarlamaternidad",
+            "destination": "/disfrutarlamaternidad/",
+            "permanent": true
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/disfrutarlamaternidad/",
             "destination": "https://web-cata.vercel.app/"
         },
         {
