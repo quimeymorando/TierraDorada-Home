@@ -4,6 +4,11 @@
             "source": "/disfrutarlamaternidad",
             "destination": "/disfrutarlamaternidad/",
             "permanent": true
+        },
+        {
+            "source": "/lavosdelamaternidad",
+            "destination": "https://formulario-cata.vercel.app",
+            "permanent": true
         }
     ],
     "rewrites": [
