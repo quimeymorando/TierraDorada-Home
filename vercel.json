@@ -8,6 +8,10 @@
     ],
     "rewrites": [
         {
+            "source": "/lavosdelamaternidad",
+            "destination": "/lavosdelamaternidad.html"
+        },
+        {
             "source": "/disfrutarlamaternidad/",
             "destination": "https://web-cata.vercel.app/"
         },
