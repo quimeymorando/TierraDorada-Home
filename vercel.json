@@ -124,6 +124,14 @@
             "destination": "https://comunidad-tierra-dorada.vercel.app/comunidad/:path*"
         },
         {
+            "source": "/confirmacion-lavosdelamaternidad",
+            "destination": "https://formulario-cata.vercel.app/confirmacion-lavosdelamaternidad"
+        },
+        {
+            "source": "/confirmacion-lavosdelamaternidad/:path*",
+            "destination": "https://formulario-cata.vercel.app/confirmacion-lavosdelamaternidad/:path*"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html"
         }
